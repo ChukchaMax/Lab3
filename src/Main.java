@@ -26,10 +26,6 @@ class Book { // Создает класс "Книга"
         status = !status;
     }
 
-    public String getNameAndAuthor() { // Возвращает название книги и имя автора, через тире
-        return name + " - " + author;
-    }
-
     public String getAuthor() { // Возвращает имя автора
         return author;
     }
@@ -79,9 +75,8 @@ class Library {  // Создает класс "Библиотека"
     }
 
     public void setStatus(String name, String author) { // Изменяет статус прочтения выбранной книги
-        String set = name + " - " + author;
         for (int i = 0; i < shelf.length; i++) // Перебор книг в массиве
-            if (set.equals(shelf[i].getNameAndAuthor())) // Если название и автор совпадают,
+            if (name.equals(shelf[i].getName())&&author.equals(shelf[i].getAuthor())) // Если название и автор совпадают,
                 shelf[i].setStatus(); // то у книги меняется статус
     }
 
